@@ -6,16 +6,29 @@ android {
     namespace 'com.tencent.nanodetncnn'
     compileSdk 33
 
+    buildToolsVersion "30.0.3"
+    ndkVersion "25.1.8937393"
+    
     defaultConfig {
         applicationId "com.tencent.nanodetncnn"
         archivesBaseName = "$applicationId"
 
         minSdk 24
+        versionCode 1
+        versionName "1.0"
+
+        externalNativeBuild {
+            cmake {
+                abiFilters 'arm64-v8a'
+                arguments "-DANDROID_STL=c++_shared"
+            }
+        }
     }
+
 
     externalNativeBuild {
         cmake {
-            version "3.10.2"
+            version "3.22.1"
             path file('src/main/jni/CMakeLists.txt')
         }
     }
