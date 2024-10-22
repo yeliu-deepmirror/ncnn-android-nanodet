@@ -1,0 +1,5 @@
+*ncnn-*-android-vulkan*
+*opencv-mobile-4.*.0-android
+.gradle
+app/build
+app/.cxx
