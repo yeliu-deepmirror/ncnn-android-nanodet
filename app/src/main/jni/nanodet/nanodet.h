@@ -18,6 +18,7 @@
 #include <opencv2/core/core.hpp>
 
 #include <net.h>
+#include "android_log.h"
 
 struct Object {
   cv::Rect_<float> rect;

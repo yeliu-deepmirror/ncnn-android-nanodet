@@ -14,8 +14,14 @@ find_package(ncnn REQUIRED)
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
 include_directories(${CMAKE_SOURCE_DIR})
+include_directories(${CMAKE_SOURCE_DIR}/nanodet)
+include_directories(${CMAKE_SOURCE_DIR}/common)
 
-add_library(nanodetncnn SHARED nanodetncnn.cpp nanodet.cpp ndkcamera.cpp)
+add_library(nanodetncnn SHARED
+  nanodet/nanodetncnn.cpp
+  nanodet/nanodet.cpp
+  ndkcamera.cpp
+)
 
 target_link_libraries(nanodetncnn
   ncnn
