@@ -26,6 +26,9 @@ struct Object {
   float prob;
 };
 
+int draw_unsupported(cv::Mat& rgb);
+int draw_fps(cv::Mat& rgb);
+
 class NanoDet {
  public:
   NanoDet();

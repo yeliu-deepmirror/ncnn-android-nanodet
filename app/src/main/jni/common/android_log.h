@@ -16,4 +16,10 @@
     __android_log_assert(#cond, LOG_TAG, fmt, ##__VA_ARGS__); \
   }
 
+inline int64_t GetBootTime() {
+  struct timespec sys_ts;
+  clock_gettime(CLOCK_BOOTTIME, &sys_ts);
+  return sys_ts.tv_sec * 1e9 + sys_ts.tv_nsec;
+}
+
 #endif  // COMMON_ANDROID_LOG_H_
