@@ -317,6 +317,8 @@ int NanoDet::load(AAssetManager* mgr, const char* modeltype, int _target_size,
   sprintf(parampath, "nanodet-%s.param", modeltype);
   sprintf(modelpath, "nanodet-%s.bin", modeltype);
 
+  LOGI("load nanodet model: %s and %s", parampath, modelpath);
+
   nanodet.load_param(mgr, parampath);
   nanodet.load_model(mgr, modelpath);
 
