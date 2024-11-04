@@ -95,12 +95,13 @@ int LaneDet::detect_and_draw(const cv::Mat& rgb) {
   float factor_w = static_cast<float>(rgb.cols) / resized_width;
   float factor_h = static_cast<float>(rgb.rows) / resized_height;
 
-  for (int y=0; y<feat.h; y++) {
-    for (int x=0; x<feat.w; x++) {
+  for (int y = 0; y < feat.h; y++) {
+    for (int x = 0; x < feat.w; x++) {
       if (ptr_ret_0[x] > ptr_ret_1[x]) {
         continue;
       }
-      cv::circle(rgb, cv::Point(factor_w * x, factor_h * y), 2, cv::Scalar(255 * ptr_r[x], 255 * ptr_g[x], 255 * ptr_b[x]), -1);
+      cv::circle(rgb, cv::Point(factor_w * x, factor_h * y), 2,
+                 cv::Scalar(255 * ptr_r[x], 255 * ptr_g[x], 255 * ptr_b[x]), -1);
     }
     ptr_ret_0 += feat.w;
     ptr_ret_1 += feat.w;
