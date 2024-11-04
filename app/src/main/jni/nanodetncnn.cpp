@@ -56,9 +56,9 @@ void MyNdkCamera::on_image_render(cv::Mat& rgb) const {
     if (nanodet_ptr_) {
       nanodet_ptr_->detect(rgb, objects);
     }
-    if (lanedet_ptr_) {
-      lanedet_ptr_->detect_and_draw(rgb);
-    }
+    // if (lanedet_ptr_) {
+    //   lanedet_ptr_->detect_and_draw(rgb);
+    // }
 
     // draw
     if (nanodet_ptr_) {
